@@ -1,0 +1,114 @@
+\documentclass[12pt, letterpaper]{article}
+
+% ==========================================
+% 1. CONFIGURACIÓN DE IDIOMA Y CODIFICACIÓN
+% ==========================================
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish, es-nodecimaldot, es-noquoting]{babel}
+
+% ==========================================
+% 2. DISEÑO DE PÁGINA Y TIPOGRAFÍA
+% ==========================================
+\usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage{mathpazo} 
+\usepackage[scaled]{helvet} 
+\usepackage{microtype} 
+\usepackage{amsmath}
+
+% ==========================================
+% 3. COLORES Y GRÁFICOS
+% ==========================================
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{float}
+
+\definecolor{techblue}{RGB}{0, 51, 102}   
+\definecolor{accentblue}{RGB}{0, 102, 204} 
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+\definecolor{codegreen}{rgb}{0,0.6,0}
+
+% ==========================================
+% 4. ESTILO DE ENCABEZADOS Y PIES (Fancyhdr)
+% ==========================================
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{1pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{techblue}\leaders\hrule height \headrulewidth\hfill}}
+
+\lhead{\bfseries\small\color{techblue}Proyecto Final}
+\rhead{\small{24 d Noviembre de 2026}}
+\cfoot{\thepage}
+
+% ==========================================
+% 5. ESTILO DE TÍTULOS DE SECCIÓN (Titlesec)
+% ==========================================
+\usepackage{titlesec}
+
+\titleformat{\section}
+  {\Large\sffamily\bfseries\color{techblue}}
+  {\thesection}
+  {1em}
+  {}
+  [\titlerule]
+
+\titleformat{\subsection}
+  {\large\sffamily\bfseries\color{accentblue}}
+  {\thesubsection}{1em}{}
+
+% ==========================================
+% 6. CONFIGURACIÓN DE LISTINGS PARA TERMINAL
+% ==========================================
+\usepackage{listings}
+
+\definecolor{lighttermbg}{RGB}{255, 255, 255}
+\definecolor{lighttermborder}{RGB}{200, 200, 200}
+
+\lstdefinestyle{terminal-light}{
+    backgroundcolor=\color{lighttermbg},
+    basicstyle=\ttfamily\footnotesize\color{black},
+    commentstyle=\color{codegray}\itshape,
+    keywordstyle=\color{techblue}\bfseries,
+    stringstyle=\color{codegreen},
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=none,
+    frame=single,
+    rulecolor=\color{lighttermborder},
+    language=bash,
+    morekeywords={docker, sudo, apt, systemctl, ping, tcpdump, wireshark},
+    literate={á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1 {ñ}{{\~n}}1
+}
+
+\lstset{style=terminal-light}
+
+\newcommand{\code}[1]{\texttt{\color{blue!80!black}#1}}
+
+% ==========================================
+% 7. DOCUMENTO
+% ==========================================
+\begin{document}
+
+{
+\tableofcontents
+}
+\newpage
+
+\begin{thebibliography}{99}
+    \bibitem{han2011}
+    Han, J., Kamber, M., \& Pei, J. (2011). \textit{Data Mining: Concepts and Techniques} (3rd ed.). Morgan Kaufmann.
+
+    \bibitem{mitchell1997}
+    Mitchell, T. M. (1997). \textit{Machine Learning}. McGraw-Hill.
+
+    \bibitem{rapidminer2026}
+    Altair Engineering Inc. (2026). \textit{RapidMiner Studio Developer Guide}. Recuperado de https://docs.rapidminer.com/
+
+    
+\end{thebibliography}
+
+\end{document}
